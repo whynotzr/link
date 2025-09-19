@@ -1,5 +1,5 @@
 :root{
-  --bg-fallback: url("https://i.imgur.com/8Km9tLL.jpg"); /* fallback image if video fails */
+  --bg-fallback: url; /* fallback image if video fails */
   --accent: #2ee07a;
   --halo1: #ff0080;
   --halo2: #7928ca;
