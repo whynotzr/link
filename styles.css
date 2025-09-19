@@ -49,7 +49,7 @@ a{color:inherit;text-decoration:none}
   position: absolute;
   inset: 0;
   background-image: radial-gradient(rgba(0, 0, 0, 0.6) 1px, transparent 1px);
-  background-size: 5px 5px; /* espace entre les points */
+  background-size: 6px 6px; /* espace entre les points */
   pointer-events: none;
   z-index: 2;
 }
