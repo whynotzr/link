@@ -1,0 +1,196 @@
+:root{
+  --bg-fallback: url("https://i.imgur.com/8Km9tLL.jpg"); /* fallback image if video fails */
+  --accent: #2ee07a;
+  --halo1: #ff0080;
+  --halo2: #7928ca;
+  --halo3: #2ee07a;
+  --text: #ffffff;
+  --muted: rgba(255,255,255,0.65);
+  --glass: rgba(255,255,255,0.04);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+#intro-screen {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.intro-content {
+  text-align: center;
+  color: white;
+}
+#enter-btn {
+  margin-top: 20px;
+  padding: 12px 28px;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #2ee07a, #18b564);
+  color: #04120b;
+  cursor: pointer;
+}
+/* fake progress animation */
+.progress-filled {
+  transition: width 1s linear;
+}
+
+/* Reset */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:#424242;color:var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+.bg-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.6) 1px, transparent 1px);
+  background-size: 5px 5px; /* espace entre les points */
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+/* Background video */
+.bg-container{position:fixed;inset:0;z-index:-3;overflow:hidden;background-size:cover;background-position:center;background-image:var(--bg-fallback)}
+#bg-video{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9) contrast(.95) brightness(.75)}
+.bg-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0; /* ou même  -1 si besoin, mais pas -3 */
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-image: var(--bg-fallback);
+}
+
+/* optional particles canvas (hidden small devices) */
+#particles-canvas{position:absolute;inset:0;pointer-events:none;opacity:0.25;filter:blur(6px);}
+
+/* Page center */
+.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;position:relative;z-index:1}
+
+/* Profile card */
+.profile-card{position:relative;border-radius:20px;padding:28px 36px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));backdrop-filter: blur(2px);box-shadow:0 10px 40px rgba(0,0,0,0.6);max-width:980px;width:92%;display:flex;align-items:center;flex-direction:column;gap:12px;}
+
+/* animated halo removed */
+.profile-card::before {
+  content: none !important;
+}
+.profile-card {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease;
+  will-change: transform;
+}
+/* subtle float animation on the card inner */
+.card-inner{position:relative;z-index:0;display:flex;flex-direction:column;align-items:center;gap:10px;animation:cardFloat 6s ease-in-out infinite}
+@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* Avatar */
+.avatar-wrap{position:relative;display:inline-block}
+.avatar{width:128px;height:128px;border-radius:50%;object-fit:cover;border:6px solid rgba(255,255,255,0.06);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
+.sticker{position:absolute;right:-8px;bottom:-8px;background:linear-gradient(135deg,#ff9ad8,#ffd47a);width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#222;transform:rotate(-8deg);box-shadow:0 8px 18px rgba(0,0,0,0.45);animation:stickerPop 4s ease-in-out infinite}
+@keyframes stickerPop{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-6px) rotate(-4deg)}}
+
+/* display name (typing) */
+.display-name{font-size:34px;margin:8px 0 0;font-weight:800;letter-spacing:0.6px;text-shadow:0 8px 30px rgba(0,0,0,0.6)}
+.cursor{display:inline-block;margin-left:4px;opacity:1;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* subline */
+.username{color:var(--muted);font-weight:600}
+.view-profile{margin-top:6px;background:linear-gradient(180deg,var(--accent), #18b564);border:0;padding:9px 18px;border-radius:999px;color:#02210f;font-weight:700;cursor:pointer;box-shadow:0 8px 30px rgba(30,120,60,0.12);transition:transform .18s, box-shadow .18s}
+.view-profile:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(30,120,60,0.22)}
+
+/* socials */
+.socials{display:flex;gap:12px;margin-top:12px}
+.social-link{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:transparent;transition:transform .18s, box-shadow .18s}
+.social-link img{width:26px;height:26px;display:block}
+.social-link:hover{transform:translateY(-6px) scale(1.08);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
+
+/* views */
+.views{margin-top:12px;color:var(--muted);display:flex;align-items:center;gap:8px;font-weight:600}
+.eye{width:18px;height:18px;fill:currentColor;opacity:.9}
+
+/* giant background text */
+.hero-bigtext{position:absolute;left:50%;top:30%;transform:translate(-50%,-30%);font-size:160px;font-weight:800;color:rgba(255,255,255,0.06);pointer-events:none;user-select:none;letter-spacing:12px;z-index:0}
+
+/* music player (fixed bottom center) */
+.music-player{position:fixed;left:50%;transform:translateX(-50%);bottom:28px;z-index:2;display:flex;align-items:center;gap:14px;padding:10px 16px;border-radius:14px;background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));backdrop-filter:blur(8px);box-shadow:0 12px 40px rgba(0,0,0,0.6);max-width:960px;width:92%}
+.track-art{width:64px;height:64px;border-radius:12px;object-fit:cover;box-shadow:0 8px 20px rgba(0,0,0,0.5)}
+.track-meta{display:flex;flex-direction:column;min-width:180px;max-width:260px}
+.track-title{font-weight:700}
+.track-artist{font-size:13px;color:var(--muted);margin-top:4px}
+
+/* controls area */
+.player-controls{flex:1;display:flex;flex-direction:column;gap:8px}
+.control{background:transparent;border:2px solid var(--accent);color:var(--accent);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:18px;cursor:pointer;transition:all .18s}
+.control:hover{background:var(--accent);color:#04120b}
+
+/* progress */
+.progress-wrap{display:flex;align-items:center;gap:10px;width:100%}
+.time{font-size:12px;color:var(--muted);min-width:40px;text-align:center}
+.progress-bar{flex:1;height:8px;background:rgba(255,255,255,0.06);border-radius:999px;overflow:hidden;cursor:pointer;position:relative}
+.progress-filled{height:100%;width:0%;background:linear-gradient(90deg,var(--accent), #00ffa5);transition:width .08s linear}
+
+/* Responsive */
+@media (max-width:720px){
+  .hero-bigtext{display:none}
+  .avatar{width:100px;height:100px}
+  .profile-card{padding:18px}
+  .track-art{display:none}
+  .track-meta{min-width:120px}
+  .music-player{padding:8px 10px;gap:8px}
+  .socials{gap:8px}
+}
+  
+
+/* accessibility focus styles */
+.social-link:focus, .control:focus, .view-profile:focus, #play-btn:focus {outline:3px solid rgba(46,224,122,0.22);outline-offset:2px}
+/* Fake progress bar animation */
+/* Fake progress bar animation (29s loop) */
+.progress-filled {
+  width: 0%;
+  animation: fakeProgress 29s linear infinite;
+}
+
+@keyframes fakeProgress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* === Ajout pour écran d'accueil === */
+#intro-screen {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.intro-content { text-align: center; }
+.welcome-title {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+.enter-btn {
+  padding: 12px 28px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: var(--accent, #2ee07a);
+  color: #04120b;
+}
+
+/* Slide animation au hover */
+.profile-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.5);
+}

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WhynotZr💫 — Profil</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- 🟢 Écran d'accueil -->
+  <div id="intro-screen">
+    <div class="intro-content">
+      <h1 class="welcome-title">Bienvenue</h1>
+      <button id="enter-btn" class="enter-btn">Entrer</button>
+    </div>
+  </div>
+
+  <!-- 🎥 Background video -->
+  <div class="bg-container" aria-hidden="true">
+    <video id="bg-video" loop playsinline preload="auto">
+      <source src="assets/videos/background.mp4" type="video/mp4">
+    </video>
+    <div class="bg-overlay"></div>
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+  </div>
+
+  <!-- 📌 Main page -->
+  <main class="page" role="main">
+    <section class="profile-card" aria-label="Profil">
+      <div class="card-inner">
+        <div class="avatar-wrap">
+          <img id="avatar-img" src="assets/images/avatar.gif" alt="Avatar" class="avatar">
+        </div>
+
+        <h1 class="display-name">
+          <span id="type-target">WhynotZr💫</span><span class="cursor">|</span>
+        </h1>
+
+        <div class="username">WhynotZr💫</div>
+
+        <button id="viewProfileBtn" class="btn view-profile">View Profile</button>
+
+        <div class="subinfo">
+          <span class="small-meta">Friends · Followers</span>
+        </div>
+
+        <nav class="socials">
+          <a class="social-link" data-name="steam" href="#">
+            <img src="https://cdn-icons-png.flaticon.com/512/3670/3670382.png" alt="Steam">
+          </a>
+          <a class="social-link" data-name="github" href="#">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+          </a>
+          <a class="social-link" data-name="x" href="#">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X">
+          </a>
+          <a class="social-link" data-name="spotify" href="#">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Spotify">
+          </a>
+          <a class="social-link" data-name="discord" href="#">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord">
+          </a>
+        </nav>
+
+        <div class="views">
+          <svg class="eye" viewBox="0 0 24 24"><path d="M12 5c-5 0-9.27 3.11-11 7 1.73 3.89 6 7 11 7s9.27-3.11 11-7c-1.73-3.89-6-7-11-7zm0 11a4 4 0 110-8 4 4 0 010 8z"/></svg>
+          <span id="views-count">0</span> vues
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 🎵 Music player -->
+  <aside class="music-player" role="region" aria-label="Lecteur de musique">
+    <img id="track-art" class="track-art" src="assets/images/avatar.gif" alt="Cover">
+    <div class="track-meta">
+      <div id="track-title" class="track-title">Body Blow</div>
+      <div id="track-artist" class="track-artist">Takamura</div>
+    </div>
+    <div class="player-controls">
+      <button id="play-btn" class="control">►</button>
+      <div class="progress-wrap">
+        <span id="current-time" class="time">0:00</span>
+        <div id="progress-bar" class="progress-bar">
+          <div id="progress-filled" class="progress-filled"></div>
+        </div>
+        <span id="duration" class="time">0:29</span>
+      </div>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
