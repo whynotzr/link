@@ -2,10 +2,10 @@
    CONFIG
    =========================== */
 const CONFIG = {
-  VIDEO_SRC: "assets/videos/background.mp4",
-  AVATAR_SRC: "assets/images/avatar.gif",
-  COVER_SRC: "assets/images/ippo.jpg",
-  AUDIO_SRC: "assets/audio/music.mp3",
+  VIDEO_SRC: "background.mp4",
+  AVATAR_SRC: "avatar.gif",
+  COVER_SRC: "ippo.jpg",
+  AUDIO_SRC: "music.mp3",
   SOCIAL_LINKS: {
     steam: "https://steamcommunity.com/profiles/76561199230924839/",
     github: "https://github.com/whynotzr",
