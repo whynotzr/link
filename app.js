@@ -4,7 +4,7 @@
 const CONFIG = {
   VIDEO_SRC: "background.mp4",
   AVATAR_SRC: "avatar.gif",
-  COVER_SRC: "ippo.jpg?v=1",
+  COVER_SRC: "ippo.jpg",
   AUDIO_SRC: "music.mp3",
   SOCIAL_LINKS: {
     steam: "https://steamcommunity.com/profiles/76561199230924839/",

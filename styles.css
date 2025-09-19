@@ -1,9 +1,9 @@
 :root{
   --bg-fallback: url; /* fallback image if video fails */
-  --accent: #2ee07a;
+  --accent: #e0c52e;
   --halo1: #ff0080;
   --halo2: #7928ca;
-  --halo3: #2ee07a;
+  --halo3: #d3a145;
   --text: #ffffff;
   --muted: rgba(255,255,255,0.65);
   --glass: rgba(255,255,255,0.04);
@@ -30,7 +30,7 @@
   font-weight: 700;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(180deg, #2ee07a, #18b564);
+  background: linear-gradient(180deg, #f7de04, #fcd600);
   color: #04120b;
   cursor: pointer;
 }
@@ -103,7 +103,7 @@ a{color:inherit;text-decoration:none}
 
 /* subline */
 .username{color:var(--muted);font-weight:600}
-.view-profile{margin-top:6px;background:linear-gradient(180deg,var(--accent), #18b564);border:0;padding:9px 18px;border-radius:999px;color:#02210f;font-weight:700;cursor:pointer;box-shadow:0 8px 30px rgba(30,120,60,0.12);transition:transform .18s, box-shadow .18s}
+.view-profile{margin-top:6px;background:linear-gradient(180deg,var(--accent), #dba800);border:0;padding:9px 18px;border-radius:999px;color:#02210f;font-weight:700;cursor:pointer;box-shadow:0 8px 30px rgba(30,120,60,0.12);transition:transform .18s, box-shadow .18s}
 .view-profile:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(30,120,60,0.22)}
 
 /* socials */
@@ -135,7 +135,7 @@ a{color:inherit;text-decoration:none}
 .progress-wrap{display:flex;align-items:center;gap:10px;width:100%}
 .time{font-size:12px;color:var(--muted);min-width:40px;text-align:center}
 .progress-bar{flex:1;height:8px;background:rgba(255,255,255,0.06);border-radius:999px;overflow:hidden;cursor:pointer;position:relative}
-.progress-filled{height:100%;width:0%;background:linear-gradient(90deg,var(--accent), #00ffa5);transition:width .08s linear}
+.progress-filled{height:100%;width:0%;background:linear-gradient(90deg,var(--accent), #af7903);transition:width .08s linear}
 
 /* Responsive */
 @media (max-width:720px){
@@ -150,7 +150,7 @@ a{color:inherit;text-decoration:none}
   
 
 /* accessibility focus styles */
-.social-link:focus, .control:focus, .view-profile:focus, #play-btn:focus {outline:3px solid rgba(46,224,122,0.22);outline-offset:2px}
+.social-link:focus, .control:focus, .view-profile:focus, #play-btn:focus {outline:3px solid rgba(224, 147, 46, 0.22);outline-offset:2px}
 /* Fake progress bar animation */
 /* Fake progress bar animation (29s loop) */
 .progress-filled {
@@ -185,7 +185,7 @@ a{color:inherit;text-decoration:none}
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  background: var(--accent, #2ee07a);
+  background: var(--accent, #ddb503);
   color: #04120b;
 }
 
@@ -193,4 +193,28 @@ a{color:inherit;text-decoration:none}
 .profile-card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 18px 50px rgba(0,0,0,0.5);
+}
+.glow {
+  color: #fff8dc; /* couleur du texte (blanc cassé doré) */
+  text-shadow:
+    0 0 5px #ffd700,   /* or pur */
+    0 0 10px #ffd700,
+    0 0 20px #ffa500,  /* orange doré */
+    0 0 40px #ffae42;  /* doré chaud */
+  animation: goldPulse 2s infinite alternate;
+}
+
+@keyframes goldPulse {
+  from {
+    text-shadow:
+      0 0 5px #ffd700,
+      0 0 10px #ffd700,
+      0 0 20px #ffa500;
+  }
+  to {
+    text-shadow:
+      0 0 15px #ffd700,
+      0 0 30px #ffa500,
+      0 0 45px #ffae42;
+  }
 }

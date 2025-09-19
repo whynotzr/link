@@ -6,42 +6,42 @@
   <title>WhynotZr💫 — Profil</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="favicon.jpg">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <!-- 🟢 Écran d'accueil -->
-  <div id="intro-screen">
-    <div class="intro-content">
-      <h1 class="welcome-title">Bienvenue</h1>
-      <button id="enter-btn" class="enter-btn">Entrer</button>
-    </div>
-  </div>
-
-  <!-- 🎥 Background video -->
-  <div class="bg-container" aria-hidden="true">
-    <video id="bg-video" loop playsinline preload="auto">
-      <source src="background.mp4" type="video/mp4">
-    </video>
-    <div class="bg-overlay"></div>
-    <canvas id="particles-canvas" aria-hidden="true"></canvas>
-  </div>
-
-  <!-- 📌 Main page -->
-  <main class="page" role="main">
-    <section class="profile-card" aria-label="Profil">
-      <div class="card-inner">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet"> 
+</head> 
+ 
+<body> 
+  <!-- 🟢 Écran d'accueil --> 
+  <div id="intro-screen"> 
+    <div class="intro-content"> 
+      <h1 class="welcome-title glow">Bienvenue</h1> <!-- ✅ ajouté glow -->
+      <button id="enter-btn" class="enter-btn glow">Entrer</button> <!-- ✅ ajouté glow -->
+    </div> 
+  </div> 
+ 
+  <!-- 🎥 Background video --> 
+  <div class="bg-container" aria-hidden="true"> 
+    <video id="bg-video" loop playsinline preload="auto"> 
+      <source src="background.mp4" type="video/mp4"> 
+    </video> 
+    <div class="bg-overlay"></div> 
+    <canvas id="particles-canvas" aria-hidden="true"></canvas> 
+  </div> 
+ 
+  <!-- 📌 Main page --> 
+  <main class="page" role="main"> 
+    <section class="profile-card" aria-label="Profil"> 
+      <div class="card-inner"> 
         <div class="avatar-wrap">
-          <img id="avatar-img" src="avatar.gif" alt="Avatar" class="avatar">
-        </div>
-
-        <h1 class="display-name">
+          <img id="avatar-img" src="avatar.gif" alt="Avatar" class="avatar"> 
+        </div> 
+ 
+        <h1 class="display-name glow"> <!-- ✅ ajouté glow -->
           <span id="type-target">WhynotZr💫</span><span class="cursor">|</span>
-        </h1>
+        </h1> 
+ 
+        <div class="username glow">WhynotZr💫</div> <!-- ✅ ajouté glow -->
 
-        <div class="username">WhynotZr💫</div>
-
-        <button id="viewProfileBtn" class="btn view-profile">View Profile</button>
+        <button id="viewProfileBtn" class="btn view-profile glow">View Profile</button> <!-- ✅ ajouté glow -->
 
         <div class="subinfo">
           <span class="small-meta">Friends · Followers</span>
@@ -75,13 +75,12 @@
 
   <!-- 🎵 Music player -->
   <aside class="music-player" role="region" aria-label="Lecteur de musique">
-    <img id="track-art" class="track-art" src="ippo.jpg?v=1" alt="Cover">
+    <img id="track-art" class="track-art" src="ippo.jpg" alt="Cover">
     <div class="track-meta">
-      <div id="track-title" class="track-title">Body Blow</div>
-      <div id="track-artist" class="track-artist">Takamura</div>
+      <div id="track-title" class="track-title glow">Tenacity</div> <!-- ✅ ajouté glow -->
+      <div id="track-artist" class="track-artist glow">ippo</div> <!-- ✅ ajouté glow -->
     </div>
     <div class="player-controls">
-      <button id="play-btn" class="control">►</button>
       <div class="progress-wrap">
         <span id="current-time" class="time">0:00</span>
         <div id="progress-bar" class="progress-bar">
@@ -93,5 +92,5 @@
   </aside>
 
   <script src="app.js"></script>
-</body>
+</body> 
 </html>
