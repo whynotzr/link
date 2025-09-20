@@ -49,7 +49,7 @@ a{color:inherit;text-decoration:none}
   position: absolute;
   inset: 0;
   background-image: radial-gradient(rgba(0, 0, 0, 0.6) 1px, transparent 1px);
-  background-size: 6px 6px; /* espace entre les points */
+  background-size: 5px 5px; /* espace entre les points */
   pointer-events: none;
   z-index: 2;
 }
@@ -75,17 +75,34 @@ a{color:inherit;text-decoration:none}
 .page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;position:relative;z-index:1}
 
 /* Profile card */
-.profile-card{position:relative;border-radius:20px;padding:28px 36px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));backdrop-filter: blur(2px);box-shadow:0 10px 40px rgba(0,0,0,0.6);max-width:980px;width:92%;display:flex;align-items:center;flex-direction:column;gap:12px;}
+.profile-card {
+  position: relative;
+  border-radius: 16px;
+  padding: 28px 36px;
+
+  /* === Fond transparent avec flou === */
+  background: rgba(255, 255, 255, 0); /* transparent */
+  backdrop-filter: blur(0px); /* tu peux augmenter ou réduire le flou */
+
+  /* === Supprimer l'ombre === */
+  box-shadow: none;
+
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease;
+  will-change: transform;
+}
+
+/* Hover avec effet 3D mais sans ombre */
+.profile-card:hover {
+  transform: rotateX(6deg) rotateY(-6deg) scale(1.02);
+  box-shadow: none; /* plus d’ombre */
+}
 
 /* animated halo removed */
 .profile-card::before {
   content: none !important;
 }
-.profile-card {
-  transform-style: preserve-3d;
-  transition: transform 0.15s ease;
-  will-change: transform;
-}
+
 /* subtle float animation on the card inner */
 .card-inner{position:relative;z-index:0;display:flex;flex-direction:column;align-items:center;gap:10px;animation:cardFloat 6s ease-in-out infinite}
 @keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
